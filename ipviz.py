@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 # Given a list of subnets, produce a visualisation of them.
-# IPv4 only
+# IPv4 and IPv6 compliant
 # Christopher Gadd
 # 10/04/2014
 
@@ -45,8 +45,7 @@ for thisRange in ipranges:
 		thisRange.append("O")
 	if thisRange[1] not in labels:
 		# from http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/
-		hue = random()
-		hue = (hue+grc) % 1
+		hue = (random()+grc) % 1
 		labels[thisRange[1]] = hue
 
 # convert string to IPv4Network
@@ -132,7 +131,6 @@ for thisSuper in superNets:
 		# print (text) or draw (image) this subnet
 		if (textOut):
 			print (netChar,end="")
-		#print (bt,netFill)
 		draw.rectangle([bt,bb], fill=netFill)
 		draw.line([bt,(bt[0],bt[1]+rh)],fill=lineCol,width=1)
 		bt=(bt[0]+blobSize,bt[1])
