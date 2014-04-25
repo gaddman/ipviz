@@ -1,5 +1,7 @@
 Script to visualize blocks of IP addresses, both as text and as an image.
+
 Works for IPv4 and IPv6
+
 Built for Python3, works fine for Python2 as well.
 
 
